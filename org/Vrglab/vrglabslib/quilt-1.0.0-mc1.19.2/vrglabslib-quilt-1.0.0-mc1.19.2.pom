@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.Vrglab</groupId>
-  <artifactId>quilt</artifactId>
+  <artifactId>vrglabslib</artifactId>
   <version>1.0.0-mc1.19.2</version>
   <dependencies>
     <dependency>
