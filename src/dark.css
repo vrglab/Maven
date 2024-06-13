@@ -32,6 +32,7 @@ th, td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #595959;
+    color: #dddddd;
 }
 
 th {
@@ -42,8 +43,16 @@ tr:nth-of-type(even) {
     background-color: #363636;
 }
 
-tr:hover {
-    background-color: #363636;
+tr:nth-of-type(odd) {
+    background-color: #1c1c1c;
+}
+
+tr:nth-of-type(odd):hover {
+    background-color: #2f2f2f;
+}
+
+tr:nth-of-type(even):hover {
+    background-color: #494949;
 }
 
 img {
