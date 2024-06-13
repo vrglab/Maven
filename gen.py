@@ -7,24 +7,7 @@ def generate_index_html(dir_path):
     <html>
     <head>
         <title>Index of {path}</title>
-        <link id="theme-style" rel="stylesheet" type="text/css" href="{rel_path}light.css">
-        <script>
-            function switchTheme() {{
-                const themeStyle = document.getElementById('theme-style');
-                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                if (prefersDarkScheme) {{
-                    themeStyle.setAttribute('href', '{rel_path}dark.css');
-                }} else {{
-                    themeStyle.setAttribute('href', '{rel_path}light.css');
-                }}
-            }}
-
-            // Listen for changes to the prefers-color-scheme media query
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', switchTheme);
-            
-            // Initial theme setting
-            switchTheme();
-        </script>
+        <link id="theme-style" rel="stylesheet" type="text/css" href="{rel_path}dark.css">
     </head>
     <body>
         <h1>Index of {path}</h1>
@@ -41,6 +24,8 @@ def generate_index_html(dir_path):
     </html>
     """
 
+    empty_message = '<tr><td colspan="3">This directory is empty</td></tr>'
+
     for root, dirs, files in os.walk(dir_path):
         rows = []
         for directory in dirs:
@@ -51,6 +36,9 @@ def generate_index_html(dir_path):
                 file_size = os.path.getsize(file_path)
                 file_mtime = datetime.fromtimestamp(os.path.getmtime(file_path)).strftime("%d.%m.%y, %H:%M:%S")
                 rows.append(f'<tr><td><img src="https://cdn.icon-icons.com/icons2/2753/PNG/512/ext_file_generic_filetype_icon_176256.png" alt="File Icon" style="width:16px;height:16px;margin-right:8px;"><a href="{file}">{file}</a></td><td>{file_size} B</td><td>{file_mtime}</td></tr>')
+
+        if not rows:
+            rows.append(empty_message)
 
         path = os.path.relpath(root, dir_path)
         depth = len(path.split(os.sep)) if path != '.' else 0
