@@ -1,0 +1,19 @@
+{
+  "name": "maven",
+  "version": "1.0.0",
+  "description": "Hosting for maven stuff",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrglab/Maven.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vrglab/Maven/issues"
+  },
+  "homepage": "https://github.com/vrglab/Maven#readme",
+  "dependencies": {
+    "firebase": "^10.12.2",
+    "maven-repository-manager": "^1.0.2"
+  }
+}
