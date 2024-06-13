@@ -44,4 +44,4 @@ def generate_index_html(dir_path):
             f.write(index_content.format(path=path, rows='\n'.join(rows), rel_path=rel_path, parent_path=parent_path))
 
 # Path to your Maven repository
-generate_index_html('org')
+generate_index_html('src')
