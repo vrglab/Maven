@@ -3,7 +3,24 @@
     <html>
     <head>
         <title>Index of org\Vrglab\vrglabslib\quilt-1.0.0-mc1.19.2</title>
-        <link rel="stylesheet" type="text/css" href="../../../../style.css">
+        <link id="theme-style" rel="stylesheet" type="text/css" href="../../../../light.css">
+        <script>
+            function switchTheme() {
+                const themeStyle = document.getElementById('theme-style');
+                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDarkScheme) {
+                    themeStyle.setAttribute('href', '../../../../dark.css');
+                } else {
+                    themeStyle.setAttribute('href', '../../../../light.css');
+                }
+            }
+
+            // Listen for changes to the prefers-color-scheme media query
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', switchTheme);
+            
+            // Initial theme setting
+            switchTheme();
+        </script>
     </head>
     <body>
         <h1>Index of org\Vrglab\vrglabslib\quilt-1.0.0-mc1.19.2</h1>

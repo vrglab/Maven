@@ -7,7 +7,24 @@ def generate_index_html(dir_path):
     <html>
     <head>
         <title>Index of {path}</title>
-        <link rel="stylesheet" type="text/css" href="{rel_path}style.css">
+        <link id="theme-style" rel="stylesheet" type="text/css" href="{rel_path}light.css">
+        <script>
+            function switchTheme() {{
+                const themeStyle = document.getElementById('theme-style');
+                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDarkScheme) {{
+                    themeStyle.setAttribute('href', '{rel_path}dark.css');
+                }} else {{
+                    themeStyle.setAttribute('href', '{rel_path}light.css');
+                }}
+            }}
+
+            // Listen for changes to the prefers-color-scheme media query
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', switchTheme);
+            
+            // Initial theme setting
+            switchTheme();
+        </script>
     </head>
     <body>
         <h1>Index of {path}</h1>
@@ -43,5 +60,5 @@ def generate_index_html(dir_path):
         with open(os.path.join(root, 'index.html'), 'w') as f:
             f.write(index_content.format(path=path, rows='\n'.join(rows), rel_path=rel_path, parent_path=parent_path))
 
-# Path to your Maven repository
+# Path to your directory
 generate_index_html('src')
