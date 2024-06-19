@@ -1,0 +1,44 @@
+tiny	2	0	intermediary	named
+c	org/Vrglab/Helpers/ImplementedInventory	org/Vrglab/Helpers/ImplementedInventory
+	m	()V	method_5431	markDirty
+	m	(II)Lnet/minecraft/class_1799;	method_5434	removeStack
+	m	(I)Lnet/minecraft/class_1799;	method_5438	getStack
+	m	()I	method_5439	size
+	m	(I)Lnet/minecraft/class_1799;	method_5441	removeStack
+	m	()Z	method_5442	isEmpty
+	m	(Lnet/minecraft/class_1657;)Z	method_5443	canPlayerUse
+	m	(ILnet/minecraft/class_1799;)V	method_5447	setStack
+	m	()V	method_5448	clear
+	m	(ILnet/minecraft/class_1799;Lnet/minecraft/class_2350;)Z	method_5492	canInsert
+	m	(ILnet/minecraft/class_1799;Lnet/minecraft/class_2350;)Z	method_5493	canExtract
+	m	(Lnet/minecraft/class_2350;)[I	method_5494	getAvailableSlots
+c	org/Vrglab/Modloader/Types/IBlockEntityLoaderFunction	org/Vrglab/Modloader/Types/IBlockEntityLoaderFunction
+	m	(Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)Lnet/minecraft/class_2586;	create	
+		p	1	class_2338	blockPos
+		p	2	class_2680	blockState
+c	org/Vrglab/Modloader/Types/IScreenHandledCreationFunction	org/Vrglab/Modloader/Types/IScreenHandledCreationFunction
+	m	(Lorg/Vrglab/Screen/ScreenHandler;Lnet/minecraft/class_1661;Lnet/minecraft/class_2561;)Lnet/minecraft/class_437;	create	
+		p	1	screenHandler	handler
+		p	2	class_1661	playerInventory
+		p	3	class_2561	title
+c	org/Vrglab/Modloader/Types/IScreenHandlerTypeCreationFunction	org/Vrglab/Modloader/Types/IScreenHandlerTypeCreationFunction
+	m	(ILnet/minecraft/class_1661;)Lorg/Vrglab/Screen/ScreenHandler;	create	
+		p	1	integer	syncId
+		p	2	class_1661	playerInventory
+c	org/Vrglab/Networking/Packet/BaseC2SPacket	org/Vrglab/Networking/Packet/BaseC2SPacket
+	m	(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/class_3222;Lnet/minecraft/class_3244;Lnet/minecraft/class_2540;Ljava/lang/Object;)V	ExecuteOnServer	
+		p	2	class_3222	player
+		p	3	class_3244	handler
+		p	4	class_2540	buffer
+		p	5	object	responseSender
+	m	(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/class_3222;Lnet/minecraft/class_3244;Lnet/minecraft/class_2540;Ljava/lang/Object;)V	receive	
+		p	4	buf	buffer
+c	org/Vrglab/Screen/ScreenHandler	org/Vrglab/Screen/ScreenHandler
+	m	(Lnet/minecraft/class_1799;IIZ)Z	method_7616	insertItem
+	m	(Lnet/minecraft/class_1735;)Lnet/minecraft/class_1735;	method_7621	addSlot
+c	org/Vrglab/TestClasses/TestBlock	org/Vrglab/TestClasses/TestBlock
+	m	(Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)Lnet/minecraft/class_2586;	method_10123	createBlockEntity
+	m	(Lnet/minecraft/class_1937;Lnet/minecraft/class_2680;Lnet/minecraft/class_2591;)Lnet/minecraft/class_5558;	method_31645	getTicker
+	m	(Lnet/minecraft/class_2680;Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_1657;Lnet/minecraft/class_1268;Lnet/minecraft/class_3965;)Lnet/minecraft/class_1269;	method_9534	onUse
+	m	(Lnet/minecraft/class_2680;Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Z)V	method_9536	onStateReplaced
+	m	(Lnet/minecraft/class_2680;)Lnet/minecraft/class_2464;	method_9604	getRenderType
